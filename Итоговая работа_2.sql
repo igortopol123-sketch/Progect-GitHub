@@ -12,16 +12,16 @@ CREATE TABLE IF NOT EXISTS authors (
   name VARCHAR(255) NOT NULL,
   birth_year INTEGER
 );
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ãàëèíà Ðîìàíîâà', 1985);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Àíòîí Ëàçàðåâ', 1979);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ìàðèÿ Êóçíåöîâà', 1990);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Èãîðü Ñîêîëîâ', 1988);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Åêàòåðèíà Íîâèêîâà', 1983);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Äàíèèë Âîëêîâ', 1992);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Îëüãà Ìîðîçîâà', 1987);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ñåðãåé Ïåòðîâ', 1984);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Àëåêñàíäð Áåëîâ', 1991);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Åëåíà Êèñåëåâà', 1986);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Галина Романова', 1985);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Антон Лазарев', 1979);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Мария Кузнецова', 1990);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Игорь Соколов', 1988);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Екатерина Новикова', 1983);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Даниил Волков', 1992);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ольга Морозова', 1987);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Сергей Петров', 1984);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Александр Белов', 1991);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Елена Киселева', 1986);
 
 -- Таблица: books
 CREATE TABLE IF NOT EXISTS books (
@@ -32,16 +32,16 @@ CREATE TABLE IF NOT EXISTS books (
   author_id INTEGER NOT NULL,
   FOREIGN KEY (author_id) REFERENCES authors(author_id)
 );
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (1, 'Òåíè ãîðîäà', 'Ñîâðåìåííàÿ ïðîçà', 2018, 1);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (2, 'Ïèñüìà áåç îòâåòà', 'Äðàìà', 2020, 2);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (3, 'Ãðàíèöà âåòðà', 'Ôýíòåçè', 2019, 3);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (4, 'Ìãíîâåíèå â ìåòðî', 'Ëèò. òðèëëåð', 2021, 4);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (5, 'Çèìíèé çâîíîê', 'Êðèìè/ìèñòèêà', 2022, 5);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (6, 'Ñâåò çà ãðàíüþ', 'Íàó÷íàÿ ôàíòàñòèêà', 2017, 6);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (7, 'Ãîðîä áåç ñíîâ', 'Ñîâðåìåííàÿ ïðîçà', 2020, 7);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (8, 'Ïàâëèíüè ãëàçà', 'Ñáîðíèê ðàññêàçîâ', 2023, 8);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (9, 'Ñåðûé ãîðîä, ñèíèé äîæäü', 'Ïñèõîëîãè÷åñêèé ðîìàí', 2021, 9);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (10, 'Êîä òèøèíû', 'Äåòåêòèâ', 2024, 10);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (1, 'Тени города', 'Современная проза', 2018, 1);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (2, 'Письма без ответа', 'Драма', 2020, 2);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (3, 'Граница ветра', 'Фэнтези', 2019, 3);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (4, 'Мгновение в метро', 'Лит. триллер', 2021, 4);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (5, 'Зимний звонок', 'Крими/мистика', 2022, 5);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (6, 'Свет за гранью', 'Научная фантастика', 2017, 6);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (7, 'Город без снов', 'Современная проза', 2020, 7);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (8, 'Павлиньи глаза', 'Сборник рассказов', 2023, 8);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (9, 'Серый город, синий дождь', 'Психологический роман', 2021, 9);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (10, 'Код тишины', 'Детектив', 2024, 10);
 
 -- Запрос: поиск всех книг автора Галина Романова
 SELECT b.book_id, b.title, b.published_year, b.genre
@@ -59,7 +59,7 @@ ORDER BY book_count DESC;
 -- Запрос: Поиск книг, название которых начинается с определенной буквы
 SELECT title, published_year
 FROM books
-WHERE title LIKE 'Ï%'
+WHERE title LIKE 'П%'
 ORDER BY title;
 
 -- Запрос: Сортировка книг по году издания от новых к старым
@@ -107,4 +107,3 @@ INSERT INTO demo (ID, Name, Hint) VALUES (27, 'DELETE', 'DELETE FROM table_name'
 
 COMMIT TRANSACTION;
 PRAGMA foreign_keys = on;
-
