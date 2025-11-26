@@ -1,29 +1,29 @@
 --
--- Ôàéë ñãåíåðèðîâàí ñ ïîìîùüþ SQLiteStudio v3.4.17 â Âñ íîÿ 23 11:05:14 2025
+-- Ð¤Ð°Ð¹Ð» ÑÐ³ÐµÐ½ÐµÑ€Ð¸Ñ€Ð¾Ð²Ð°Ð½ Ñ Ð¿Ð¾Ð¼Ð¾Ñ‰ÑŒÑŽ SQLiteStudio v3.4.17 Ð² Ð’Ñ Ð½Ð¾Ñ 23 11:05:14 2025
 --
--- Èñïîëüçîâàííàÿ êîäèðîâêà òåêñòà: System
+-- Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð½Ð°Ñ ÐºÐ¾Ð´Ð¸Ñ€Ð¾Ð²ÐºÐ° Ñ‚ÐµÐºÑÑ‚Ð°: System
 --
 PRAGMA foreign_keys = off;
 BEGIN TRANSACTION;
 
--- Òàáëèöà: authors
+-- Ð¢Ð°Ð±Ð»Ð¸Ñ†Ð°: authors
 CREATE TABLE IF NOT EXISTS authors (
   author_id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   birth_year INTEGER
 );
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ãàëèíà Ðîìàíîâà', 1985);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Àíòîí Ëàçàðåâ', 1979);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ìàðèÿ Êóçíåöîâà', 1990);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Èãîðü Ñîêîëîâ', 1988);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Åêàòåðèíà Íîâèêîâà', 1983);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Äàíèèë Âîëêîâ', 1992);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Îëüãà Ìîðîçîâà', 1987);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ñåðãåé Ïåòðîâ', 1984);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Àëåêñàíäð Áåëîâ', 1991);
-INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Åëåíà Êèñåëåâà', 1986);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'ÃƒÃ Ã«Ã¨Ã­Ã  ÃÃ®Ã¬Ã Ã­Ã®Ã¢Ã ', 1985);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ã€Ã­Ã²Ã®Ã­ Ã‹Ã Ã§Ã Ã°Ã¥Ã¢', 1979);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'ÃŒÃ Ã°Ã¨Ã¿ ÃŠÃ³Ã§Ã­Ã¥Ã¶Ã®Ã¢Ã ', 1990);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'ÃˆÃ£Ã®Ã°Ã¼ Ã‘Ã®ÃªÃ®Ã«Ã®Ã¢', 1988);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ã…ÃªÃ Ã²Ã¥Ã°Ã¨Ã­Ã  ÃÃ®Ã¢Ã¨ÃªÃ®Ã¢Ã ', 1983);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ã„Ã Ã­Ã¨Ã¨Ã« Ã‚Ã®Ã«ÃªÃ®Ã¢', 1992);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'ÃŽÃ«Ã¼Ã£Ã  ÃŒÃ®Ã°Ã®Ã§Ã®Ã¢Ã ', 1987);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ã‘Ã¥Ã°Ã£Ã¥Ã© ÃÃ¥Ã²Ã°Ã®Ã¢', 1984);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ã€Ã«Ã¥ÃªÃ±Ã Ã­Ã¤Ã° ÃÃ¥Ã«Ã®Ã¢', 1991);
+INSERT INTO authors (author_id, name, birth_year) VALUES (NULL, 'Ã…Ã«Ã¥Ã­Ã  ÃŠÃ¨Ã±Ã¥Ã«Ã¥Ã¢Ã ', 1986);
 
--- Òàáëèöà: books
+-- Ð¢Ð°Ð±Ð»Ð¸Ñ†Ð°: books
 CREATE TABLE IF NOT EXISTS books (
   book_id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT NOT NULL,
@@ -32,36 +32,37 @@ CREATE TABLE IF NOT EXISTS books (
   author_id INTEGER NOT NULL,
   FOREIGN KEY (author_id) REFERENCES authors(author_id)
 );
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (1, 'Òåíè ãîðîäà', 'Ñîâðåìåííàÿ ïðîçà', 2018, 1);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (2, 'Ïèñüìà áåç îòâåòà', 'Äðàìà', 2020, 2);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (3, 'Ãðàíèöà âåòðà', 'Ôýíòåçè', 2019, 3);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (4, 'Ìãíîâåíèå â ìåòðî', 'Ëèò. òðèëëåð', 2021, 4);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (5, 'Çèìíèé çâîíîê', 'Êðèìè/ìèñòèêà', 2022, 5);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (6, 'Ñâåò çà ãðàíüþ', 'Íàó÷íàÿ ôàíòàñòèêà', 2017, 6);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (7, 'Ãîðîä áåç ñíîâ', 'Ñîâðåìåííàÿ ïðîçà', 2020, 7);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (8, 'Ïàâëèíüè ãëàçà', 'Ñáîðíèê ðàññêàçîâ', 2023, 8);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (9, 'Ñåðûé ãîðîä, ñèíèé äîæäü', 'Ïñèõîëîãè÷åñêèé ðîìàí', 2021, 9);
-INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (10, 'Êîä òèøèíû', 'Äåòåêòèâ', 2024, 10);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (1, 'Ã’Ã¥Ã­Ã¨ Ã£Ã®Ã°Ã®Ã¤Ã ', 'Ã‘Ã®Ã¢Ã°Ã¥Ã¬Ã¥Ã­Ã­Ã Ã¿ Ã¯Ã°Ã®Ã§Ã ', 2018, 1);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (2, 'ÃÃ¨Ã±Ã¼Ã¬Ã  Ã¡Ã¥Ã§ Ã®Ã²Ã¢Ã¥Ã²Ã ', 'Ã„Ã°Ã Ã¬Ã ', 2020, 2);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (3, 'ÃƒÃ°Ã Ã­Ã¨Ã¶Ã  Ã¢Ã¥Ã²Ã°Ã ', 'Ã”Ã½Ã­Ã²Ã¥Ã§Ã¨', 2019, 3);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (4, 'ÃŒÃ£Ã­Ã®Ã¢Ã¥Ã­Ã¨Ã¥ Ã¢ Ã¬Ã¥Ã²Ã°Ã®', 'Ã‹Ã¨Ã². Ã²Ã°Ã¨Ã«Ã«Ã¥Ã°', 2021, 4);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (5, 'Ã‡Ã¨Ã¬Ã­Ã¨Ã© Ã§Ã¢Ã®Ã­Ã®Ãª', 'ÃŠÃ°Ã¨Ã¬Ã¨/Ã¬Ã¨Ã±Ã²Ã¨ÃªÃ ', 2022, 5);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (6, 'Ã‘Ã¢Ã¥Ã² Ã§Ã  Ã£Ã°Ã Ã­Ã¼Ã¾', 'ÃÃ Ã³Ã·Ã­Ã Ã¿ Ã´Ã Ã­Ã²Ã Ã±Ã²Ã¨ÃªÃ ', 2017, 6);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (7, 'ÃƒÃ®Ã°Ã®Ã¤ Ã¡Ã¥Ã§ Ã±Ã­Ã®Ã¢', 'Ã‘Ã®Ã¢Ã°Ã¥Ã¬Ã¥Ã­Ã­Ã Ã¿ Ã¯Ã°Ã®Ã§Ã ', 2020, 7);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (8, 'ÃÃ Ã¢Ã«Ã¨Ã­Ã¼Ã¨ Ã£Ã«Ã Ã§Ã ', 'Ã‘Ã¡Ã®Ã°Ã­Ã¨Ãª Ã°Ã Ã±Ã±ÃªÃ Ã§Ã®Ã¢', 2023, 8);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (9, 'Ã‘Ã¥Ã°Ã»Ã© Ã£Ã®Ã°Ã®Ã¤, Ã±Ã¨Ã­Ã¨Ã© Ã¤Ã®Ã¦Ã¤Ã¼', 'ÃÃ±Ã¨ÃµÃ®Ã«Ã®Ã£Ã¨Ã·Ã¥Ã±ÃªÃ¨Ã© Ã°Ã®Ã¬Ã Ã­', 2021, 9);
+INSERT INTO books (book_id, title, genre, published_year, author_id) VALUES (10, 'ÃŠÃ®Ã¤ Ã²Ã¨Ã¸Ã¨Ã­Ã»', 'Ã„Ã¥Ã²Ã¥ÃªÃ²Ã¨Ã¢', 2024, 10);
 
--- Çàïðîñ: ïîèñê âñåõ êíèã àâòîðà Ãàëèíà ÐîìàíîâàSELECT b.book_id, b.title, b.published_year, b.genre
+-- Ð—Ð°Ð¿Ñ€Ð¾Ñ: Ð¿Ð¾Ð¸ÑÐº Ð²ÑÐµÑ… ÐºÐ½Ð¸Ð³ Ð°Ð²Ñ‚Ð¾Ñ€Ð° Ð“Ð°Ð»Ð¸Ð½Ð° Ð Ð¾Ð¼Ð°Ð½Ð¾Ð²Ð°
+SELECT b.book_id, b.title, b.published_year, b.genre
 FROM books b
 JOIN authors a ON b.author_id = a.author_id
-WHERE a.name = 'Ãàëèíà Ðîìàíîâà';
+WHERE a.name = 'Ð“Ð°Ð»Ð¸Ð½Ð° Ð Ð¾Ð¼Ð°Ð½Ð¾Ð²Ð°';
 
--- Çàïðîñ: Ïîäñ÷¸ò êîëè÷åñòâà êíèã íà êàæäîãî àâòîðà
+-- Ð—Ð°Ð¿Ñ€Ð¾Ñ: ÐŸÐ¾Ð´ÑÑ‡Ñ‘Ñ‚ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° ÐºÐ½Ð¸Ð³ Ð½Ð° ÐºÐ°Ð¶Ð´Ð¾Ð³Ð¾ Ð°Ð²Ñ‚Ð¾Ñ€Ð°
 SELECT a.name AS author, COUNT(*) AS book_count
 FROM authors a
 LEFT JOIN books b ON b.author_id = a.author_id
 GROUP BY a.author_id, a.name
 ORDER BY book_count DESC;
 
--- Çàïðîñ: Ïîèñê êíèã, íàçâàíèå êîòîðûõ íà÷èíàåòñÿ ñ îïðåäåëåííîé áóêâû
+-- Ð—Ð°Ð¿Ñ€Ð¾Ñ: ÐŸÐ¾Ð¸ÑÐº ÐºÐ½Ð¸Ð³, Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ñ… Ð½Ð°Ñ‡Ð¸Ð½Ð°ÐµÑ‚ÑÑ Ñ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð½Ð¾Ð¹ Ð±ÑƒÐºÐ²Ñ‹
 SELECT title, published_year
 FROM books
-WHERE title LIKE 'Ï%'
+WHERE title LIKE 'Ã%'
 ORDER BY title;
 
--- Çàïðîñ: Ñîðòèðîâêà êíèã ïî ãîäó èçäàíèÿ îò íîâûõ ê ñòàðûì
+-- Ð—Ð°Ð¿Ñ€Ð¾Ñ: Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° ÐºÐ½Ð¸Ð³ Ð¿Ð¾ Ð³Ð¾Ð´Ñƒ Ð¸Ð·Ð´Ð°Ð½Ð¸Ñ Ð¾Ñ‚ Ð½Ð¾Ð²Ñ‹Ñ… Ðº ÑÑ‚Ð°Ñ€Ñ‹Ð¼
 SELECT *
 FROM books
 ORDER BY published_year DESC;
@@ -69,14 +70,22 @@ ORDER BY published_year DESC;
 
 
 
-sf tableName => SELECT columns FROM tableName
-sc tableName => SELECT count(*) FROM tableName
-sl tableName => SELECT * FROM tableName ORDER BY key DESC LIMIT 100;
-ct => CREATE TABLE
-ii tableName => INSERT INTO
-us tableName => UPDATE SET
-uw tableName => UPDATE SET WHERE
-df tableName => DELETE FROM
+sf tableName => SELECT columns FROM tableName
+
+sc tableName => SELECT count(*) FROM tableName
+
+sl tableName => SELECT * FROM tableName ORDER BY key DESC LIMIT 100;
+
+ct => CREATE TABLE
+
+ii tableName => INSERT INTO
+
+us tableName => UPDATE SET
+
+uw tableName => UPDATE SET WHERE
+
+df tableName => DELETE FROM
+
 dw tableName => DELETE FROM WHERE');
 INSERT INTO demo (ID, Name, Hint) VALUES (11, 'SQLite 3.50.4', 'SQL OnLine on JavaScript');
 INSERT INTO demo (ID, Name, Hint) VALUES (12, '[RightClick] mouse', 'Opens many additional features');
@@ -98,3 +107,4 @@ INSERT INTO demo (ID, Name, Hint) VALUES (27, 'DELETE', 'DELETE FROM table_name'
 
 COMMIT TRANSACTION;
 PRAGMA foreign_keys = on;
+
